@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <script src="https://unpkg.com/htmx.org@2.0.3"></script> /*
+        <h1 id = "logo_heading">Research Club</h1>
+        <h2 id = "logo_subheading">SuperNova School</h2>
+        <!--DO NOT TOUCH THE ABOVE SCRIPTS. - Shahmeer-->
+        <nav>
+            <a href = "/university_search.html/">University Search</a>
+            <a href = "/summer_programs.html/">Summer Programs</a>
+            <a href = "/research_opportunities.html/">Research Opportunities</a>
+            <a href = "/blogs.html/">Research Blogs</a>
+            <a href = "/information.html/">Useful Information</a>
+            <a href = "/about.html/">About</a>
+        </nav>
+    </header>
+
+    <body>
+        <!--Makes sure user is currently logged in, otherwise redirects them back away to the main page-->
+        <script>
+            const auth = getAuth();
+            onAuthStateChanged(auth, (user) => {
+            if (user) {
+            // User is signed in, see docs for a list of available properties
+            // https://firebase.google.com/docs/reference/js/auth.user
+            const uid = user.uid;
+            // ...
+            } else {
+            window.location.replace("/index.html/")
+            }
+            });
+        </script>
+
+        <h1>Upload your articles here:</h1>
+        <!--Text box-->
+        <form action="/blog_upload.html/" name = "article_submissionn">
+            <textarea rows="1" cols="1"></textarea>
+            <!--Make this thing dynamically resizable using HTMX to monitor input :|-->
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <script src="https://unpkg.com/htmx.org@2.0.3"></script> /*
+        <h1 id = "logo_heading">Research Club</h1>
+        <h2 id = "logo_subheading">SuperNova School</h2>
+        <!--DO NOT TOUCH THE ABOVE SCRIPTS. - Shahmeer-->
+        <nav>
+            <a href = "/university_search.html/">University Search</a>
+            <a href = "/summer_programs.html/">Summer Programs</a>
+            <a href = "/research_opportunities.html/">Research Opportunities</a>
+            <a href = "/blogs.html/">Research Blogs</a>
+            <a href = "/information.html/">Useful Information</a>
+            <a href = "/about.html/">About</a>
+        </nav>
+    </header>
+
+    <body>
+        <h1>Sign in below.</h1>
+        <!--Sign in form-->
+        <form id="sign_in" action ="/blog_sign_in.html/">
+            Email: <input type="text" name = "email"><br>
+            Password: <input type="password" name = "password"><br><br>
+            <input type="button" onclick="signInWithEmailAndPassword" value="Submit">
+        </form>
+
+        <!--Sign in script in JS, handled by Firebase Authentication Service-->
+        <script>
+        const auth = getAuth();
+        setPersistence(auth, none).then(() =>
+        {
+        // Sign-in persistent permanently.
+        return signInWithEmailAndPassword(auth, email, password);
+        }).catch((error) =>
+        {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        });
+
+         window.location.replace("/blog_upload.html/")
+        </script>
+        <!--Automatically redirects to blog upload page-->
+    </body>
+</html>

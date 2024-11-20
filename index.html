@@ -2,20 +2,33 @@
 <html>
     <header>
         <script src="https://unpkg.com/htmx.org@2.0.3"></script> /*
-        <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app-compat.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore-compat.js"></script>
-        <!--DO NOT TOUCH THE ABOVE SCRIPTS. - Shahmeer-->
         <h1 id = "logo_heading">Research Club</h1>
         <h2 id = "logo_subheading">SuperNova School</h2>
-        <a href = "university_search.html">University Search</a>
-        <a href = "summer_programs.html">Summer Programs</a>
-        <a href = "research_opportunities.html">Research Opportunities</a>
-        <a href = "blogs.html">Research Blogs</a>
-        <a href = "information.html">Useful Information</a>
-        <a href = "about.html">About</a>
+        <!--DO NOT TOUCH THE ABOVE SCRIPTS. - Shahmeer-->
+        <nav>
+            <a href = "/university_search.html/">University Search</a>
+            <a href = "/summer_programs.html/">Summer Programs</a>
+            <a href = "/research_opportunities.html/">Research Opportunities</a>
+            <a href = "/blogs.html/">Research Blogs</a>
+            <a href = "/information.html/">Useful Information</a>
+            <a href = "/about.html/">About</a>
+        </nav>
     </header>
 
     <body>
+        <!--Initializes Firebase for the entire app-->
+        <script>
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js"
+            import { getAuth } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js"
+
+            // See: https://firebase.google.com/docs/web/learn-more#config-object
+            const firebaseConfig =
+            {
+                projectId: // No chance web scrapers
+            };
+            // Initialize Firebase
+        </script>
+
         <div id = "landing_splashscreen">
             <h1>Welcome to the home of SuperNova's Research Club!</h1>
             <h2>Here we host a variety of opportunities and resources to make <strong>your</strong> life easier.</h2>
@@ -27,7 +40,7 @@
                 <h1>About the club</h1>
                 <p>
                     The SuperNova Research Club was founded in the 2024-2025 school year through the
-                    efforts of the student council and Senior Deputy Head Boy Aditya Vijay.
+                    efforts of the student council.
                 
                     The club's purpose is to bring a variety of opportunities in research and higher
                     education to SuperNovians and ensure they have access to high quality guidance and
