@@ -23,6 +23,18 @@
             if (user) {
             // User is signed in, see docs for a list of available properties
             // https://firebase.google.com/docs/reference/js/auth.user
+            // Firebase configuration
+            const firebaseConfig = {
+                // Add your Firebase config object here
+                // Get this from Firebase Console -> Project Settings
+            };
+
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const auth = getAuth(app);
+
+            // Get current user details
+            const email = user.email;
             const uid = user.uid;
             // ...
             } else {
@@ -33,7 +45,41 @@
 
         <h1>Upload your articles here:</h1>
         <!--Text box-->
-        <form action="/blog_upload.html/" name = "article_submissionn">
+        <form action="/blog_upload.html/" name="article_submission">
+            <textarea rows="1" cols="1" hx-trigger="keyup changed" hx-get="/resize_textarea" hx-target="this"></textarea>
+            <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+            <script>
+                // Your web app's Firebase configuration
+                const firebaseConfig = {
+                    // Add your Firebase config object here
+                    // Get this from Firebase Console -> Project Settings
+                };
+
+                // Initialize Firebase
+                const app = firebase.initializeApp(firebaseConfig);
+                const database = firebase.database();
+
+                function submitArticle() {
+                    const articleContent = document.querySelector('textarea').value;
+                    const user = firebase.auth().currentUser;
+
+                    if (user) {
+                        const userId = user.uid;
+                        firebase.database().ref('articles/' + userId).push({
+                            content: articleContent,
+                            timestamp: new Date().toISOString()
+                        }).then(() => {
+                            alert('Article submitted successfully!');
+                        }).catch((error) => {
+                            console.error('Error submitting article:', error);
+                        });
+                    } else {
+                        alert('You must be logged in to submit an article.');
+                    }
+                }
+            </script>
+            <button type="button" onclick="submitArticle()">Confirm Submission</button>
             <textarea rows="1" cols="1"></textarea>
             <!--Make this thing dynamically resizable using HTMX to monitor input :|-->
             <br>

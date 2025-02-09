@@ -14,5 +14,51 @@
             <a href = "/about.html/">About</a>
         </nav>
     </header>
+<body>
+    <div id="blogs-container"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('https://your-firebase-database-url/blogs.json')
+                .then(response => response.json())
+                .then(data => {
+                    const blogsContainer = document.getElementById('blogs-container');
+                    const blogs = Object.values(data).sort((a, b) => new Date(b.date) - new Date(a.date));
+                    blogs.forEach(blog => {
+                        const blogElement = document.createElement('div');
+                        blogElement.classList.add('blog');
+                        blogElement.innerHTML = `
+                            <h3>${blog.title}</h3>
+                            <p>${blog.content}</p>
+                            <small>${new Date(blog.date).toLocaleDateString()}</small>
+                        `;
+                        blogsContainer.appendChild(blogElement);
+                    });
+                })
+                .catch(error => console.error('Error fetching blogs:', error));
+        });
+    </script>
+</body>
 </html>
+<script>
+    document.addEventListener('htmx:load', function() {
+        fetch('https://your-firebase-database-url/blogs.json')
+            .then(response => response.json())
+            .then(data => {
+                const blogsContainer = document.getElementById('blogs-container');
+                blogsContainer.innerHTML = ''; // Clear existing content
+                const blogs = Object.values(data).sort((a, b) => new Date(b.date) - new Date(a.date));
+                blogs.forEach(blog => {
+                    const blogElement = document.createElement('div');
+                    blogElement.classList.add('blog');
+                    blogElement.innerHTML = `
+                        <h3>${blog.title}</h3>
+                        <p>${blog.content}</p>
+                        <small>${new Date(blog.date).toLocaleDateString()}</small>
+                    `;
+                    blogsContainer.appendChild(blogElement);
+                });
+            })
+            .catch(error => console.error('Error fetching blogs:', error));
+    });
+</script>
 

@@ -4,8 +4,9 @@
         <script src="https://unpkg.com/htmx.org@2.0.3"></script> /*
         <h1 id = "logo_heading">Research Club</h1>
         <h2 id = "logo_subheading">SuperNova School</h2>
+        <link rel="stylesheet" href="styles.css">
         <!--DO NOT TOUCH THE ABOVE SCRIPTS. - Shahmeer-->
-        <nav>
+        <nav class="md3-navigation-bar"></nav>
             <a href = "/university_search.html/">University Search</a>
             <a href = "/summer_programs.html/">Summer Programs</a>
             <a href = "/research_opportunities.html/">Research Opportunities</a>
@@ -24,9 +25,11 @@
             // See: https://firebase.google.com/docs/web/learn-more#config-object
             const firebaseConfig =
             {
-                projectId: // No chance web scrapers
+                projectId: "your-project-id-here"
             };
             // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
         </script>
 
         <div id = "landing_splashscreen">

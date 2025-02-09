@@ -1,25 +1,36 @@
 <!DOCTYPE html>
-<html>
-    <header>
-        <script src="https://unpkg.com/htmx.org@2.0.3"></script> /*
-        <h1 id = "logo_heading">Research Club</h1>
-        <h2 id = "logo_subheading">SuperNova School</h2>
-        <!--DO NOT TOUCH THE ABOVE SCRIPTS. - Shahmeer-->
-        <nav>
-            <a href = "/university_search.html/">University Search</a>
-            <a href = "/summer_programs.html/">Summer Programs</a>
-            <a href = "/research_opportunities.html/">Research Opportunities</a>
-            <a href = "/blogs.html/">Research Blogs</a>
-            <a href = "/information.html/">Useful Information</a>
-            <a href = "/about.html/">About</a>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Club - About</title>
+    <script src="https://unpkg.com/htmx.org@2.0.3"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="md3-body"></body>
+    <header class="md3-top-app-bar">
+        <div class="md3-top-app-bar__row">
+            <div class="md3-top-app-bar__section">
+                <h1 id="logo_heading" class="md3-top-app-bar__title">Research Club</h1>
+                <h2 id="logo_subheading" class="md3-top-app-bar__subtitle">SuperNova School</h2>
+            </div>
+        </div>
+        <nav class="md3-navigation-bar"></nav>
+            <a class="md3-navigation-item" href="/university_search.html" hx-get="/university_search.html" hx-trigger="click" hx-target="#main-content">University Search</a>
+            <a class="md3-navigation-item" href="/summer_programs.html" hx-get="/summer_programs.html" hx-trigger="click" hx-target="#main-content">Summer Programs</a>
+            <a class="md3-navigation-item" href="/research_opportunities.html" hx-get="/research_opportunities.html" hx-trigger="click" hx-target="#main-content">Research Opportunities</a>
+            <a class="md3-navigation-item" href="/blogs.html" hx-get="/blogs.html" hx-trigger="click" hx-target="#main-content">Research Blogs</a>
+            <a class="md3-navigation-item" href="/information.html" hx-get="/information.html" hx-trigger="click" hx-target="#main-content">Useful Information</a>
+            <a class="md3-navigation-item active" href="/about.html" hx-get="/about.html" hx-trigger="click" hx-target="#main-content">About</a>
         </nav>
     </header>
 
-    <body>
-        <div class = "about_club">
-            <h1>The SuperNova Research Club</h1>
-            <p>
-                The SuperNova Research Club was founded in 2024 due to the efforts of the student council
+    <main id="main-content" class="md3-content">
+        <section class="md3-card about_club">
+            <h1 class="md3-headline-large">The SuperNova Research Club</h1>
+            <p class="md3-body-medium">
+                The SuperNova Research Club was founded in 2024 due to the efforts of the student council</section>
                 in 2024. The club is the first of its kind in Islamabad, and has provided students access
                 to a variety of opportunities and new extracurriculars, enabling them to achieve their full
                 potential and providing students access to new opportunities not typically available to them!
