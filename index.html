@@ -1,12 +1,105 @@
 <!DOCTYPE html>
 <html>
     <header>
-        <script src="https://unpkg.com/htmx.org@2.0.3"></script> /*
-        <h1 id = "logo_heading">Research Club</h1>
-        <h2 id = "logo_subheading">SuperNova School</h2>
+        <script src="https://unpkg.com/htmx.org@2.0.3"></script>
+        <h1 id="logo_heading" style="text-align: left;">Research Club</h1>
+        <h2 id="logo_subheading" style="text-align: left;">SuperNova School</h2>
         <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=MedievalSharp&display=swap');
+
+            body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            line-height: 1.6;
+            }
+
+            header {
+            background-color: #333333;
+            color: #e0e0e0;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #444444;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            header h1, header h2 {
+            margin: 0;
+            font-weight: normal;
+            }
+
+            nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            }
+
+            nav a:hover {
+            background-color: #444444;
+            }
+
+            h1, h2, h3 {
+            color: #e0e0e0;
+            margin-bottom: 10px;
+            }
+
+            div {
+            padding: 20px;
+            margin: 20px auto;
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            }
+
+            ul.list {
+            list-style-type: none;
+            padding: 0;
+            }
+
+            ul.list li {
+            background-color: #3a3a3a;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            }
+
+            footer {
+            background-color: #333333;
+            color: #e0e0e0;
+            text-align: center;
+            padding: 10px;
+            border-top: 1px solid #444444;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            }
+
+            footer a {
+            color: #e0e0e0;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            }
+
+            footer a:hover {
+            background-color: #444444;
+            }
+        </style>
         <!--DO NOT TOUCH THE ABOVE SCRIPTS. - Shahmeer-->
-        <nav class="md3-navigation-bar"></nav>
+        <nav>
             <a href = "/university_search.html/">University Search</a>
             <a href = "/summer_programs.html/">Summer Programs</a>
             <a href = "/research_opportunities.html/">Research Opportunities</a>
@@ -32,14 +125,14 @@
         const auth = getAuth(app);
         </script>
 
-        <div id = "landing_splashscreen">
+        <div>
             <h1>Welcome to the home of SuperNova's Research Club!</h1>
             <h2>Here we host a variety of opportunities and resources to make <strong>your</strong> life easier.</h2>
             <h3>Check it out!</h3>
         </div>
 
-        <div id = "info_section">
-            <div class = "about_club">
+        <div>
+            <div>
                 <h1>About the club</h1>
                 <p>
                     The SuperNova Research Club was founded in the 2024-2025 school year through the

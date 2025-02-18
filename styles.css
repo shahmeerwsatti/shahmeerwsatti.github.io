@@ -1,39 +1,28 @@
 /* Import the Roboto font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-/* General styles */
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+/* General container styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-header {
-    background-color: #000;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-    font-weight: 700;
-}
-
+/* Navigation bar styles */
 nav {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
+    background: var(--md-primary);
+    color: var(--md-on-primary);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--md-elevation-1);
 }
 
 nav a {
-    color: #fff;
+    color: var(--md-on-primary);
     text-decoration: none;
-    margin: 0 15px;
+    margin: 0 10px;
     font-weight: 700;
 }
 
@@ -41,44 +30,88 @@ nav a:hover {
     text-decoration: underline;
 }
 
-main {
-    padding: 20px;
+/* Header styles */
+header {
+    background: var(--md-surface-variant);
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: var(--md-elevation-1);
 }
 
-article {
-    background-color: #fff;
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: var(--md-primary);
+}
+
+header p {
+    margin: 10px 0 0;
+    color: var(--md-primary);
+}
+
+/* Footer styles */
+footer {
+    background: var(--md-primary);
+    color: var(--md-on-primary);
+    padding: 20px;
+    text-align: center;
+    box-shadow: var(--md-elevation-1);
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Section styles */
+section {
+    padding: 40px 20px;
+    background: var(--md-surface);
+    box-shadow: var(--md-elevation-1);
     margin-bottom: 20px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-article h2 {
-    font-size: 2em;
-    font-weight: 700;
+section h2 {
+    margin-top: 0;
+    color: var(--md-primary);
+}
+
+section p {
+    color: #333;
+}
+
+/* Utility classes */
+.text-center {
+    text-align: center;
+}
+
+.mt-0 {
     margin-top: 0;
 }
 
-article p {
-    line-height: 1.6;
+.mb-0 {
+    margin-bottom: 0;
 }
 
-footer {
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+/* General styles */
+
+/* Google colors */
+.google-blue {
+    color: #4285F4;
 }
-/* Material Design 3 colors and shadows */
-:root {
-    --md-primary: #6750A4;
-    --md-on-primary: #FFFFFF;
-    --md-surface: #FFFBFE;
-    --md-surface-variant: #E7E0EC;
-    --md-elevation-1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    --md-elevation-2: 0 3px 6px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.12);
+
+.google-red {
+    color: #DB4437;
+}
+
+.google-yellow {
+    color: #F4B400;
+}
+
+.google-green {
+    color: #0F9D58;
+}
+body {
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Material Design state layers */
